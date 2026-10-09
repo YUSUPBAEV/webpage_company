@@ -54,7 +54,9 @@
   <section class="section">
     <div class="container">
       <div class="split top">
-        <form class="form reveal" data-mailto="bobkhon1345@gmail.com" novalidate>
+        <form class="form reveal" action="https://formspree.io/f/xyekwlow" method="POST" data-contact-form novalidate>
+          <input type="hidden" name="_subject" value="New project enquiry from the website">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <div class="form-row">
             <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required placeholder="Jane Doe"></div>
             <div class="field"><label for="company">Company <span class="opt">(optional)</span></label><input id="company" name="company" type="text" autocomplete="organization" placeholder="Company name"></div>
@@ -90,11 +92,11 @@
           <div class="field"><label for="message">Describe your workload and goals</label><textarea id="message" name="message" required placeholder="Model type, current performance, latency / power targets, timeline…"></textarea></div>
 
           <div class="btn-row" style="align-items:center">
-            <button type="submit" class="btn btn-primary">Start a Project
+            <button type="submit" class="btn btn-primary" data-submit>Start a Project
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
             <p class="form-note">We are happy to sign an NDA before you share technical details.</p>
           </div>
-          <div class="form-status" role="status">Your email client should now open with your message. If it does not, write to us at <a href="mailto:bobkhon1345@gmail.com" style="text-decoration:underline">bobkhon1345@gmail.com</a>.</div>
+          <div class="form-status" role="status" aria-live="polite"></div>
         </form>
 
         <aside class="contact-aside reveal">

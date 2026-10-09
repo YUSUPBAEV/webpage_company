@@ -98,10 +98,9 @@
   }
 
   /* ---------- Contact form ----------
-     No backend is wired up yet. Until one is, the form opens the visitor's
-     email client with the enquiry pre-filled. To use a form service, set
-     the form's action attribute and remove data-mailto. */
-  var form = document.querySelector("form[data-mailto]");
+     Submits to Formspree (the form's action URL) in the background and
+     shows the result inline. Without JS the form still posts normally. */
+  var form = document.querySelector("form[data-contact-form]");
   if (form) {
     var params = new URLSearchParams(window.location.search);
     var topic = params.get("topic");
@@ -109,27 +108,50 @@
       var box = form.querySelector("input[name='area'][value='" + topic.replace(/'/g, "") + "']");
       if (box) box.checked = true;
     }
+    var status = form.querySelector(".form-status");
+    var submitBtn = form.querySelector("[data-submit]");
+
+    function showStatus(msg, isError) {
+      status.textContent = msg;
+      status.style.borderColor = isError ? "rgba(255,110,110,.5)" : "";
+      status.style.background = isError ? "rgba(255,110,110,.08)" : "";
+      status.classList.add("show");
+    }
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.reportValidity()) return;
+
+      // Send the selected areas as one readable field.
       var d = new FormData(form);
       var areas = d.getAll("area").join(", ") || "Not specified";
-      var lines = [
-        "Name: " + d.get("name"),
-        "Company: " + (d.get("company") || "-"),
-        "Email: " + d.get("email"),
-        "Areas: " + areas,
-        "Stage: " + (d.get("stage") || "-"),
-        "Target platform: " + (d.get("platform") || "-"),
-        "",
-        d.get("message")
-      ];
-      var subject = "Engineering enquiry — " + (d.get("company") || d.get("name"));
-      window.location.href = "mailto:" + form.getAttribute("data-mailto") +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(lines.join("\n"));
-      var status = form.querySelector(".form-status");
-      if (status) status.classList.add("show");
+      d.delete("area");
+      d.set("areas", areas);
+      d.set("_replyto", d.get("email"));
+
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = ".6";
+      status.classList.remove("show");
+
+      fetch(form.action, { method: "POST", body: d, headers: { Accept: "application/json" } })
+        .then(function (res) {
+          if (res.ok) {
+            form.reset();
+            showStatus("Thank you, your message has been sent. An engineer will get back to you soon.", false);
+          } else {
+            return res.json().then(function (data) {
+              var msg = data && data.errors ? data.errors.map(function (x) { return x.message; }).join(" ") : "";
+              showStatus("Sorry, your message could not be sent. " + msg + " Please try again.", true);
+            });
+          }
+        })
+        .catch(function () {
+          showStatus("Sorry, your message could not be sent. Please check your connection and try again.", true);
+        })
+        .then(function () {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = "";
+        });
     });
   }
 
