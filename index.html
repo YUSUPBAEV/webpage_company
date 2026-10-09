@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Hardware Engineering for Edge AI | Your Company</title>
+  <meta name="description" content="We design and optimize AI acceleration systems, from neural network models to FPGA, NPU and custom silicon, for higher performance, lower latency and better energy efficiency.">
+  <meta name="theme-color" content="#05070d">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand" aria-label="Your Company home">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect x="7" y="7" width="18" height="18" rx="3" stroke="url(#bm)" stroke-width="1.6"/>
+        <rect x="12" y="12" width="8" height="8" rx="1.2" fill="url(#bm)"/>
+        <path d="M12 3v4M16 3v4M20 3v4M12 25v4M16 25v4M20 25v4M3 12h4M3 16h4M3 20h4M25 12h4M25 16h4M25 20h4" stroke="#8b97b3" stroke-width="1.4" stroke-linecap="round"/>
+        <defs><linearGradient id="bm" x1="7" y1="7" x2="25" y2="25"><stop stop-color="#5b8cff"/><stop offset="1" stop-color="#9b7bff"/></linearGradient></defs>
+      </svg>
+      <span>Your Company</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="services.html">Services</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Talk to an Engineer</a>
+    </nav>
+    <a href="contact.html" class="btn btn-primary nav-cta">Talk to an Engineer</a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="grid-bg" aria-hidden="true"></div>
+    <div class="glow" aria-hidden="true" style="width:520px;height:520px;right:-120px;top:40px;background:#3d5bd9;"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">AI hardware engineering</span>
+          <h1 class="display">AI Hardware Engineering for <span class="grad-text">Faster, Smarter Edge&nbsp;AI</span></h1>
+          <p class="lead">We design and optimize AI acceleration systems&mdash;from neural network models to FPGA, NPU, and custom silicon&mdash;to deliver higher performance, lower latency, and better energy efficiency.</p>
+          <div class="btn-row">
+            <a href="contact.html" class="btn btn-primary">Talk to an Engineer
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <a href="services.html" class="btn btn-ghost">Explore Our Services</a>
+          </div>
+          <div class="hero-meta" aria-label="Focus areas">
+            <span>NPU architecture</span><span>FPGA acceleration</span><span>ASIC / RTL</span><span>Edge AI</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="diagram-frame">
+            <svg class="diagram" viewBox="0 0 520 520" role="img" aria-labelledby="heroFigTitle">
+              <title id="heroFigTitle">Illustrative NPU die: weight and activation buffers feeding an 8 by 8 systolic array of processing elements, with accumulators, vector unit and DMA</title>
+              <defs>
+                <radialGradient id="peGlow"><stop offset="0" stop-color="#9fb8ff"/><stop offset="1" stop-color="#6b6bff" stop-opacity=".35"/></radialGradient>
+
+                <pattern id="pinsH" width="24" height="14" patternUnits="userSpaceOnUse"><rect x="8" y="0" width="8" height="14" rx="1" class="pin"/></pattern>
+                <pattern id="pinsV" width="14" height="24" patternUnits="userSpaceOnUse"><rect x="0" y="8" width="14" height="8" rx="1" class="pin"/></pattern>
+              </defs>
+              <!-- package pins -->
+              <rect x="76" y="46" width="368" height="14" fill="url(#pinsH)"/>
+              <rect x="76" y="460" width="368" height="14" fill="url(#pinsH)"/>
+              <rect x="46" y="76" width="14" height="368" fill="url(#pinsV)"/>
+              <rect x="460" y="76" width="14" height="368" fill="url(#pinsV)"/>
+              <!-- package + die -->
+              <rect x="60" y="60" width="400" height="400" rx="14" class="fill-surface stroke-strong"/>
+              <rect x="84" y="84" width="352" height="352" rx="6" class="fill-surface-2 stroke"/>
+              <!-- buffers -->
+              <rect x="168" y="100" width="248" height="22" rx="3" class="fill-surface stroke-strong"/>
+              <text x="292" y="114.5" text-anchor="middle" class="label">WEIGHT BUFFER</text>
+              <rect x="100" y="140" width="22" height="248" rx="3" class="fill-surface stroke-strong"/>
+              <text x="0" y="0" text-anchor="middle" class="label" transform="translate(114.5 264) rotate(-90)">ACTIVATION BUFFER</text>
+              <!-- dataflow -->
+              <g>
+                <path class="flow" d="M180 122v18M212 122v18M244 122v18M276 122v18M308 122v18M340 122v18M372 122v18M404 122v18"/>
+                <path class="flow" d="M122 152h46M122 184h46M122 216h46M122 248h46M122 280h46M122 312h46M122 344h46M122 376h46"/>
+              </g>
+              <!-- PE array (filled by main.js) -->
+              <g data-pe-grid="8,8,168,140,24,8"></g>
+              <!-- bottom blocks -->
+              <rect x="100" y="400" width="60" height="22" rx="3" class="fill-surface stroke"/>
+              <text x="130" y="414.5" text-anchor="middle" class="label">DMA</text>
+              <rect x="168" y="400" width="120" height="22" rx="3" class="fill-surface stroke"/>
+              <text x="228" y="414.5" text-anchor="middle" class="label">ACCUMULATORS</text>
+              <rect x="296" y="400" width="120" height="22" rx="3" class="fill-surface stroke"/>
+              <text x="356" y="414.5" text-anchor="middle" class="label">VECTOR UNIT</text>
+              <!-- die corner label -->
+              <text x="96" y="99" class="label" style="font-size:8px">CTRL</text>
+            </svg>
+            <div class="diagram-caption"><span>Fig. 01 / Systolic-array NPU</span><span>Illustrative</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head split reveal">
+        <div>
+          <span class="eyebrow">Core services</span>
+          <h2 class="h2">Engineering across the full AI acceleration stack</h2>
+        </div>
+        <p class="lead">From the model graph to the gate level: we work where software meets silicon, so performance decisions are made with the whole system in view.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <a href="services.html#model-optimization" class="card reveal">
+          <span class="num">01</span>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M4 4h16v4H4zM6 10h12v4H6zM8 16h8v4H8z"/></svg></div>
+          <h3>AI Model Optimization</h3>
+          <p>Make models faster and leaner on specialized hardware, through quantization, compression and hardware-aware tuning.</p>
+          <div class="tag-list"><span class="tag">INT8 / INT4</span><span class="tag">Compression</span><span class="tag">Latency</span></div>
+        </a>
+        <a href="services.html#fpga" class="card reveal">
+          <span class="num">02</span>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><rect x="6.5" y="6.5" width="4" height="4"/><rect x="13.5" y="6.5" width="4" height="4"/><rect x="6.5" y="13.5" width="4" height="4"/><path d="M13.5 15.5h4M15.5 13.5v4"/></svg></div>
+          <h3>FPGA AI Acceleration</h3>
+          <p>Inference pipelines and accelerator architectures on FPGA, from RTL/HLS implementation to prototyping and benchmarking.</p>
+          <div class="tag-list"><span class="tag">RTL / HLS</span><span class="tag">Prototyping</span><span class="tag">HW/SW co-design</span></div>
+        </a>
+        <a href="services.html#npu" class="card reveal">
+          <span class="num">03</span>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></div>
+          <h3>NPU &amp; AI Accelerator Design</h3>
+          <p>Custom neural-network accelerator architectures, including compute arrays, dataflow and the memory system that feeds them.</p>
+          <div class="tag-list"><span class="tag">Systolic arrays</span><span class="tag">MAC arrays</span><span class="tag">Dataflow</span></div>
+        </a>
+        <a href="services.html#asic-rtl" class="card reveal">
+          <span class="num">04</span>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="12" height="12" rx="1.5"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div>
+          <h3>ASIC &amp; RTL Engineering</h3>
+          <p>Verilog/SystemVerilog RTL, IP block development, SoC integration and verification for production-grade digital hardware.</p>
+          <div class="tag-list"><span class="tag">SystemVerilog</span><span class="tag">IP blocks</span><span class="tag">SoC</span></div>
+        </a>
+        <a href="services.html#edge-ai" class="card reveal">
+          <span class="num">05</span>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="9" width="14" height="12" rx="2"/><path d="M9 13h6v4H9z"/><path d="M8.5 5.5a5 5 0 017 0M6 3a8.5 8.5 0 0112 0"/></svg></div>
+          <h3>Edge AI Engineering</h3>
+          <p>On-device inference for resource-constrained systems, balancing latency, power, memory and bandwidth.</p>
+          <div class="tag-list"><span class="tag">On-device AI</span><span class="tag">Low power</span><span class="tag">Embedded</span></div>
+        </a>
+        <a href="services.html#performance" class="card reveal">
+          <span class="num">06</span>
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 18a8 8 0 1116 0"/><path d="M12 18l4-6"/><path d="M4 21h16"/></svg></div>
+          <h3>AI Hardware Performance Engineering</h3>
+          <p>Cycle-accurate modeling and analysis that pinpoint bottlenecks and quantify architectural trade-offs.</p>
+          <div class="tag-list"><span class="tag">Cycle-accurate</span><span class="tag">Bandwidth</span><span class="tag">Utilization</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FROM MODELS TO SILICON ================= -->
+  <section class="section bg-alt" id="stack">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why choose us</span>
+        <h2 class="h2">From AI Models to Silicon</h2>
+        <p class="lead">Performance is lost at the boundaries between layers of the stack. We understand the complete AI hardware stack, so we can optimize across those boundaries instead of within just one of them.</p>
+      </div>
+
+      <div class="reveal">
+        <ol class="stack" aria-label="AI hardware stack">
+          <li class="stack-step">
+            <span class="idx">L1</span>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.7 7.1l3.6 3.8M6.7 16.9l3.6-3.8M13.7 10.9l3.6-3.8M13.7 13.1l3.6 3.8"/></svg>
+            <div><h4>AI Model</h4><p>Graph, operators, accuracy targets</p></div>
+          </li>
+          <li class="stack-step">
+            <span class="idx">L2</span>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 20h18"/><path d="M4 16h4v-4h4V8h4V4h4"/></svg>
+            <div><h4>Quantization</h4><p>INT8 / INT4, calibration, compression</p></div>
+          </li>
+          <li class="stack-step">
+            <span class="idx">L3</span>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg>
+            <div><h4>Compiler / Runtime</h4><p>Tiling, scheduling, operator mapping</p></div>
+          </li>
+          <li class="stack-step">
+            <span class="idx">L4</span>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg>
+            <div><h4>NPU Architecture</h4><p>Compute arrays, dataflow, memory</p></div>
+          </li>
+          <li class="stack-step">
+            <span class="idx">L5</span>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 16h4V8h4v8h4V8h4v8h4"/></svg>
+            <div><h4>RTL</h4><p>Verilog / SystemVerilog, verification</p></div>
+          </li>
+          <li class="stack-step">
+            <span class="idx">L6</span>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><rect x="6.5" y="6.5" width="4" height="4"/><rect x="13.5" y="6.5" width="4" height="4"/><rect x="6.5" y="13.5" width="4" height="4"/><path d="M13.5 15.5h4M15.5 13.5v4"/></svg>
+            <div><h4>FPGA Prototype</h4><p>On-hardware validation, benchmarks</p></div>
+          </li>
+          <li class="stack-step">
+            <span class="idx">L7</span>
+            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1.5"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>
+            <div><h4>ASIC</h4><p>SoC integration, silicon-ready IP</p></div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="feature-list">
+        <div class="feature reveal"><h4><span class="mono">01</span>Deep AI hardware expertise</h4><p>We understand how neural networks behave as workloads, not just as models.</p></div>
+        <div class="feature reveal"><h4><span class="mono">02</span>NPU architecture experience</h4><p>Compute arrays, dataflows and on-chip memory hierarchies designed around the workload.</p></div>
+        <div class="feature reveal"><h4><span class="mono">03</span>FPGA and RTL development</h4><p>Synthesizable, verified RTL and FPGA implementations, not just architectural sketches.</p></div>
+        <div class="feature reveal"><h4><span class="mono">04</span>Hardware/software co-design</h4><p>Model, compiler and hardware decisions made together, not handed over a wall.</p></div>
+        <div class="feature reveal"><h4><span class="mono">05</span>Performance-driven engineering</h4><p>Latency, throughput, utilization and bandwidth are tracked from the first model to the final prototype.</p></div>
+        <div class="feature reveal"><h4><span class="mono">06</span>Practical prototyping and benchmarking</h4><p>Architectures validated on real hardware, with results measured instead of assumed.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= APPROACH ================= -->
+  <section class="section" id="approach">
+    <div class="container">
+      <div class="section-head split reveal">
+        <div>
+          <span class="eyebrow">Engineering approach</span>
+          <h2 class="h2">A measured path from workload to hardware</h2>
+        </div>
+        <p class="lead">Every engagement follows the same discipline: understand the workload, find the real bottleneck, then build and prove the fix.</p>
+      </div>
+      <div class="process">
+        <div class="process-step"><span class="step-no">01</span><span class="bar" aria-hidden="true"></span><h3>Analyze</h3><p>Understand the AI workload, model, hardware constraints, latency and power requirements.</p></div>
+        <div class="process-step"><span class="step-no">02</span><span class="bar" aria-hidden="true"></span><h3>Profile</h3><p>Identify compute, memory, bandwidth and architectural bottlenecks.</p></div>
+        <div class="process-step"><span class="step-no">03</span><span class="bar" aria-hidden="true"></span><h3>Architect</h3><p>Design an optimized AI acceleration architecture.</p></div>
+        <div class="process-step"><span class="step-no">04</span><span class="bar" aria-hidden="true"></span><h3>Implement</h3><p>Develop RTL, FPGA prototypes and hardware/software integration.</p></div>
+        <div class="process-step"><span class="step-no">05</span><span class="bar" aria-hidden="true"></span><h3>Benchmark</h3><p>Measure real performance and optimize the system based on evidence.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INDUSTRIES ================= -->
+  <section class="section bg-alt" id="industries">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Industries</span>
+        <h2 class="h2">Where efficient AI hardware matters</h2>
+        <p class="lead">Wherever inference has to fit a power budget, a latency deadline or a silicon area, the hardware decides what is possible.</p>
+      </div>
+      <div class="industries reveal">
+        <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="9" width="14" height="12" rx="2"/><path d="M9 13h6v4H9z"/><path d="M8.5 5.5a5 5 0 017 0M6 3a8.5 8.5 0 0112 0"/></svg><span>Edge AI</span></div>
+        <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21h8M9 21v-4M9 17l-3-6 6-4 5 3"/><circle cx="6" cy="11" r="1.5"/><circle cx="12" cy="7" r="1.5"/><path d="M17 10l3-1M17 10l1 3"/></svg><span>Robotics</span></div>
+        <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span>Computer Vision</span></div>
+        <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M3 21V10l5 3V10l5 3V10l5 3V4h3v17z"/></svg><span>Industrial AI</span></div>
+        <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h6a3 3 0 000-6h-4a3 3 0 010-6h6"/></svg><span>Autonomous Systems</span></div>
+        <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg><span>Smart Cameras</span></div>
+        <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="12" height="12" rx="1.5"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg><span>Embedded Systems</span></div>
+        <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h6"/></svg><span>AI Infrastructure</span></div>
+        <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M9 3.5v17M15 3.5v17M3.5 9h17M3.5 15h17"/></svg><span>Semiconductor R&amp;D</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CASE STUDIES ================= -->
+  <section class="section" id="case-studies">
+    <div class="container">
+      <div class="section-head split reveal">
+        <div>
+          <span class="eyebrow">Case studies</span>
+          <h2 class="h2">Engineering work, documented end to end</h2>
+        </div>
+        <div>
+          <p class="lead" style="margin-bottom:20px">Each project is documented as Problem → Architecture → Implementation → Benchmark → Result. We publish numbers only after they have been verified experimentally.</p>
+          <a href="case-studies.html" class="link-arrow">View all case studies <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="case reveal">
+          <div class="case-visual" aria-hidden="true">
+            <svg viewBox="0 0 320 180" class="diagram">
+
+              <rect x="24" y="40" width="54" height="100" rx="4" class="fill-surface-2 stroke"/><text x="51" y="94" text-anchor="middle" class="label">HOST</text>
+              <rect x="110" y="30" width="176" height="120" rx="6" class="fill-surface stroke-strong"/>
+              <text x="122" y="46" class="label">FPGA</text>
+              <rect x="124" y="56" width="66" height="78" rx="3" class="fill-surface-2 stroke"/><text x="157" y="98" text-anchor="middle" class="label">ACCEL</text>
+              <rect x="204" y="56" width="68" height="34" rx="3" class="fill-surface-2 stroke"/><text x="238" y="76" text-anchor="middle" class="label">BUFFERS</text>
+              <rect x="204" y="100" width="68" height="34" rx="3" class="fill-surface-2 stroke"/><text x="238" y="120" text-anchor="middle" class="label">DMA</text>
+              <path class="flow" d="M78 90h46M190 73h14M190 117h14"/>
+            </svg>
+          </div>
+          <div class="case-body">
+            <span class="case-status">Results pending publication</span>
+            <h3>AI Accelerator Prototype</h3>
+            <p>Designed and implemented a configurable AI accelerator architecture with FPGA-based validation.</p>
+            <div class="case-flow"><span>Problem</span><i></i><span>Architecture</span><i></i><span>Implementation</span><i></i><span>Benchmark</span><i></i><span>Result</span></div>
+          </div>
+        </article>
+        <article class="case reveal">
+          <div class="case-visual" aria-hidden="true">
+            <svg viewBox="0 0 320 180" class="diagram">
+              <path d="M40 24v128h256" class="stroke-strong"/>
+              <path d="M40 140 L150 60 L296 60" class="stroke-strong" style="stroke:#7d8cff;stroke-width:1.5"/>
+              <path d="M150 60v92" class="stroke" stroke-dasharray="3 4"/>
+              <circle cx="92" cy="118" r="3.5" fill="#5b8cff"/><circle cx="128" cy="88" r="3.5" fill="#6e9cff"/>
+              <circle cx="190" cy="74" r="3.5" fill="#8e80ff"/><circle cx="242" cy="66" r="3.5" fill="#9b7bff"/>
+              <text x="58" y="40" class="label">PERF</text>
+              <text x="296" y="168" text-anchor="end" class="label">ARITHMETIC INTENSITY</text>
+              <text x="198" y="52" class="label">COMPUTE-BOUND</text>
+              <text x="58" y="120" class="label" transform="rotate(-36 58 120)">MEMORY-BOUND</text>
+            </svg>
+          </div>
+          <div class="case-body">
+            <span class="case-status">Results pending publication</span>
+            <h3>NPU Performance Modeling</h3>
+            <p>Developed cycle-accurate models to evaluate architectural trade-offs, memory bandwidth, latency and throughput.</p>
+            <div class="case-flow"><span>Problem</span><i></i><span>Architecture</span><i></i><span>Implementation</span><i></i><span>Benchmark</span><i></i><span>Result</span></div>
+          </div>
+        </article>
+        <article class="case reveal">
+          <div class="case-visual" aria-hidden="true">
+            <svg viewBox="0 0 320 180" class="diagram">
+              <g class="stroke">
+                <rect x="28" y="36" width="64" height="18" rx="3" class="fill-surface-2"/><rect x="28" y="64" width="64" height="18" rx="3" class="fill-surface-2"/>
+                <rect x="28" y="92" width="64" height="18" rx="3" class="fill-surface-2"/><rect x="28" y="120" width="64" height="18" rx="3" class="fill-surface-2"/>
+              </g>
+              <text x="60" y="48" text-anchor="middle" class="label">CONV</text><text x="60" y="76" text-anchor="middle" class="label">CONV</text>
+              <text x="60" y="104" text-anchor="middle" class="label">POOL</text><text x="60" y="132" text-anchor="middle" class="label">FC</text>
+              <text x="60" y="28" text-anchor="middle" class="label">FP32</text>
+              <path class="flow" d="M100 88h44"/>
+              <rect x="152" y="58" width="56" height="60" rx="4" class="fill-surface stroke-strong"/><text x="180" y="91" text-anchor="middle" class="label">INT8</text>
+              <path class="flow" d="M214 88h28"/>
+              <rect x="248" y="50" width="48" height="76" rx="8" class="fill-surface-2 stroke-strong"/>
+              <rect x="258" y="62" width="28" height="28" rx="2" class="stroke"/><text x="272" y="112" text-anchor="middle" class="label">EDGE</text>
+            </svg>
+          </div>
+          <div class="case-body">
+            <span class="case-status">Results pending publication</span>
+            <h3>Edge AI Optimization</h3>
+            <p>Optimized neural-network workloads for resource-constrained hardware platforms.</p>
+            <div class="case-flow"><span>Problem</span><i></i><span>Architecture</span><i></i><span>Implementation</span><i></i><span>Benchmark</span><i></i><span>Result</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section bg-alt" id="about">
+    <div class="container">
+      <div class="split top">
+        <div class="reveal">
+          <span class="eyebrow">About the company</span>
+          <p class="statement">We are an AI hardware engineering company focused on turning demanding AI workloads into efficient hardware implementations.</p>
+        </div>
+        <div class="reveal">
+          <p class="lead">Our expertise spans AI model optimization, NPU architecture, FPGA acceleration, RTL design, ASIC/SoC engineering and edge AI.</p>
+          <p class="lead">We work with startups, semiconductor companies, research teams and technology companies developing next-generation AI products.</p>
+          <a href="about.html" class="link-arrow" style="margin-top:12px">More about us <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="cta reveal">
+        <div class="grid-bg" aria-hidden="true"></div>
+        <svg class="cta-trace" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 80h220l40 40h180M0 320h160l40-40h140M1200 100h-200l-40 40h-160M1200 300h-240l-30 30h-120" stroke="url(#ctaGrad)" stroke-width="1" fill="none"/>
+          <defs><linearGradient id="ctaGrad" x1="0" x2="1"><stop stop-color="#5b8cff" stop-opacity=".7"/><stop offset=".5" stop-color="#5b8cff" stop-opacity="0"/><stop offset="1" stop-color="#9b7bff" stop-opacity=".7"/></linearGradient></defs>
+        </svg>
+        <h2>Have an AI workload that needs to run faster?</h2>
+        <p>Let's optimize the hardware behind your AI.</p>
+        <div class="btn-row">
+          <a href="contact.html" class="btn btn-primary">Start a Project
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="contact.html" class="btn btn-ghost">Talk to an Engineer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" aria-label="Your Company home">
+          <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect x="7" y="7" width="18" height="18" rx="3" stroke="#7d8cff" stroke-width="1.6"/>
+            <rect x="12" y="12" width="8" height="8" rx="1.2" fill="#7d8cff"/>
+            <path d="M12 3v4M16 3v4M20 3v4M12 25v4M16 25v4M20 25v4M3 12h4M3 16h4M3 20h4M25 12h4M25 16h4M25 20h4" stroke="#8b97b3" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <span>Your Company</span>
+        </a>
+        <p>We help companies turn AI models into efficient, high-performance hardware.</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#model-optimization">AI Model Optimization</a></li>
+          <li><a href="services.html#fpga">FPGA AI Acceleration</a></li>
+          <li><a href="services.html#npu">NPU &amp; Accelerator Design</a></li>
+          <li><a href="services.html#asic-rtl">ASIC &amp; RTL Engineering</a></li>
+          <li><a href="services.html#edge-ai">Edge AI Engineering</a></li>
+          <li><a href="services.html#performance">Performance Engineering</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <ul>
+          <li><a href="contact.html">Talk to an Engineer</a></li>
+          <li><a href="contact.html">Start a Project</a></li>
+          <li><a href="mailto:engineering@example.com">engineering@example.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Your Company. All rights reserved.</span>
+      <span class="mono">Models → Silicon</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
